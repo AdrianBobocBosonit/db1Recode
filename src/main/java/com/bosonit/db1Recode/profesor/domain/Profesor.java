@@ -1,16 +1,19 @@
 package com.bosonit.db1Recode.profesor.domain;
 
 import com.bosonit.db1Recode.persona.domain.Persona;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "PROFESOR")
-public class Profesor {
+public class Profesor implements Serializable {
     @Id
     @GeneratedValue(generator = "profesorGenerator")
     @GenericGenerator(name = "profesorGenerator",

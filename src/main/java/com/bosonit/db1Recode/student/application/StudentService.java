@@ -22,4 +22,6 @@ public interface StudentService {
     void deleteStudentByPersona(String id_persona) throws EntityNotFoundException;
 
     StudentOutputDTO updateStudentById(String id_student, StudentInputDTO studentInputDTO) throws EntityNotFoundException;
+
+    String setAsignatura(String id_student, List<String> id_asignaturas) throws EntityNotFoundException;
 }

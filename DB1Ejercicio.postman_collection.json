@@ -1,0 +1,626 @@
+{
+	"info": {
+		"_postman_id": "1683d521-9068-4178-b081-0cbad67b52fb",
+		"name": "DB1Ejercicio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22790947"
+	},
+	"item": [
+		{
+			"name": "Persona",
+			"item": [
+				{
+					"name": "AddPersona",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"ManoloUser\",\r\n    \"password\":\"ManoloPass\",\r\n    \"name\":\"ManoloName\",\r\n    \"surname\": \"ManoloSurr\",\r\n    \"company_email\":\"manolo@company.com\",\r\n    \"personal_email\":\"manolo@personal.com\",\r\n    \"city\":\"TOLEDO\",\r\n    \"active\":true,\r\n    \"created_date\":\"2022-02-22\",\r\n    \"imagen_url\": \"www.google.com\",\r\n    \"termination_date\": \"2022-02-23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/personas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllPersonas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/personas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPersonaByUsername",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/personas/username/ManoloUser",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas",
+								"username",
+								"ManoloUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPersonaById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/personas/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePersonaById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/personas/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutUpdatePersona",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Modified\",\r\n    \"password\":\"ManoloPassModified\",\r\n    \"name\":\"ManoloNameModified\",\r\n    \"surname\": \"ManoloSurrModified\",\r\n    \"company_email\":\"manolo@company.comModified\",\r\n    \"personal_email\":\"manolo@personal.comModified\",\r\n    \"city\":\"TOLEDOModified\",\r\n    \"active\":false,\r\n    \"created_date\":\"2022-02-02\",\r\n    \"imagen_url\": \"www.google.comModified\",\r\n    \"termination_date\": \"2022-02-03\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/personas/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPersonaFull 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/personas?idPersona=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas"
+							],
+							"query": [
+								{
+									"key": "idPersona",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profesor",
+			"item": [
+				{
+					"name": "AddProfesor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_persona\":1,\r\n    \"comments\":\"Manolo es el mejor\",\r\n    \"branch\":\"Ciencias puras\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/profesores",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profesores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllProfesores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/profesores",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profesores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProfesorGetByIdPersona",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/profesores/persona/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profesores",
+								"persona",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProfesorByIdProfesor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/profesores/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profesores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeledeByIdProfesor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/profesores/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profesores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeledeByIdPersona",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/profesores/persona/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profesores",
+								"persona",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProfesorByIdProfesor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/profesores?idProfesor=1&branch=Lengua",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profesores"
+							],
+							"query": [
+								{
+									"key": "idProfesor",
+									"value": "1"
+								},
+								{
+									"key": "branch",
+									"value": "Lengua"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "AddStudent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_persona\":2,\r\n    \"numb_hours\":30,\r\n    \"comments\":\"Es el mejor\",\r\n    \"id_profesor\":1,\r\n    \"branch\":\"Ciencias puras\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/students",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllStudents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/students",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStudentByIdStudent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/students/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStudentByIdPersona",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/students/persona/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"persona",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteStudentByIdStudent",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/students/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteStudentByIdPersona",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/students/persona/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"persona",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Asignatura",
+			"item": [
+				{
+					"name": "AddAsignatura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_profesor\":1,\r\n    \"nombreAsignatura\":\"Lengua\",\r\n    \"comment\":\"No le gusta a nadie\",\r\n    \"initial_date\":\"2021-09-13\",\r\n    \"finish_date\":\"2022-06-12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/asignaturas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"asignaturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllAsignaturas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/asignaturas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"asignaturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStudentBranchByIdBranch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/studentBranch/branch/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"studentBranch",
+								"branch",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStudentBranchByIdStudent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/studentBranch/student/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"studentBranch",
+								"student",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteStudentBranchByIdBranch",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/studentBranch/branch/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"studentBranch",
+								"branch",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteStudentBranchByIdStudent",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/studentBranch/student/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"studentBranch",
+								"student",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddAsignatudasToStudent",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[1]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/students/setAsignaturas/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"setAsignaturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

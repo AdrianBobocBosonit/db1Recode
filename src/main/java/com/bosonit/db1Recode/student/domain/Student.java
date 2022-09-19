@@ -1,18 +1,21 @@
 package com.bosonit.db1Recode.student.domain;
 
-import com.bosonit.db1Recode.alumno_estudios.domain.AlumnoEstudios;
+import com.bosonit.db1Recode.asignatura.domain.Asignatura;
 import com.bosonit.db1Recode.persona.domain.Persona;
 import com.bosonit.db1Recode.profesor.domain.Profesor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
-public class Student {
+public class Student implements Serializable {
     @Id
     @GeneratedValue(generator = "studentGenerator")
     @GenericGenerator(name = "studentGenerator",
@@ -30,7 +33,7 @@ public class Student {
 
     private String comments;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_profesor")
     private Profesor profesor;
 
@@ -38,5 +41,13 @@ public class Student {
     private String branch;
 
     @ManyToMany(mappedBy = "students")
-    List<AlumnoEstudios> alumnoEstudios;
+    List<Asignatura> asignaturaList;
 }
+
+/*
+SELECT * FROM PERSONA;
+SELECT * FROM PROFESOR;
+SELECT * FROM STUDENT;
+SELECT * FROM ASIGNATURA;
+SELECT * FROM STUDENT_ASIGNATURA;
+ */
